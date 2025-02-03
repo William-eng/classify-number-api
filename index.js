@@ -41,8 +41,11 @@ function isPerfect(num) {
 }
 
 function digitSum(num) {
-  return String(num).split('').reduce((acc, digit) => acc + parseInt(digit), 0);
+  return String(Math.abs(num)) // Convert number to absolute value to remove the negative sign
+    .split('')
+    .reduce((acc, digit) => acc + parseInt(digit, 10), 0);
 }
+
 
 function getProperties(num) {
   const properties = [];
